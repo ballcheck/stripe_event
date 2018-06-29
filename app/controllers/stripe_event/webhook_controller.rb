@@ -1,7 +1,7 @@
 module StripeEvent
   class WebhookController < ActionController::Base
     if Rails.application.config.action_controller.default_protect_from_forgery
-      skip_before_action :verify_authenticity_token
+      skip_before_action :verify_authenticity_token, raise: false
     end
 
     def event
